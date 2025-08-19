@@ -409,8 +409,24 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="company_address">Business Address *</label>
-                        <input type="text" id="company_address" name="company_address" required>
+                        <label for="address_street">Street Address *</label>
+                        <input type="text" id="address_street" name="address_street" placeholder="123 Main Street" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address_city">City *</label>
+                            <input type="text" id="address_city" name="address_city" placeholder="Hollywood" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address_state">State *</label>
+                            <input type="text" id="address_state" name="address_state" placeholder="FL" maxlength="2" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address_zip">ZIP Code *</label>
+                        <input type="text" id="address_zip" name="address_zip" placeholder="33021" pattern="[0-9]{5}" required>
                     </div>
                     
                     <div class="form-row">
@@ -799,7 +815,11 @@
                 company_name: formData.get('company_name'),
                 email: formData.get('email'),
                 phone: formData.get('phone'),
-                company_address: formData.get('company_address'),
+                company_address: `${formData.get('address_street')}, ${formData.get('address_city')}, ${formData.get('address_state')} ${formData.get('address_zip')}`,
+                address_street: formData.get('address_street'),
+                address_city: formData.get('address_city'),
+                address_state: formData.get('address_state'),
+                address_zip: formData.get('address_zip'),
                 
                 // Delivery Information
                 delivery_email: formData.get('delivery_email'),
@@ -855,16 +875,21 @@
                 
                 if (response.ok) {
                     successMsg.classList.add('show');
-                    // Clear form
-                    this.reset();
                     // Scroll to success message
                     successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     
-                    // Optional: Redirect after 5 seconds
+                    // Redirect to payment after 2 seconds
                     setTimeout(() => {
-                        // You can redirect to a thank you page or payment page
-                        // window.location.href = 'https://yoursite.com/thank-you';
-                    }, 5000);
+                        // REPLACE THESE WITH YOUR ACTUAL STRIPE PAYMENT LINKS
+                        const BANK_PAYMENT_LINK = 'https://m.intulinks.com/payment-link/68a49c1567ee3b039a685c2c';
+                        const CARD_PAYMENT_LINK = 'https://m.intulinks.com/payment-link/68a49c9f613b1b337acd3e20';
+                        
+                        if (data.payment_method === 'bank') {
+                            window.location.href = BANK_PAYMENT_LINK;
+                        } else {
+                            window.location.href = CARD_PAYMENT_LINK;
+                        }
+                    }, 2000);
                 } else {
                     throw new Error('Submission failed');
                 }
