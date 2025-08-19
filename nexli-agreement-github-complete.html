@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexli Funding LLC - Lead Generation Agreement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a5490 0%, #2c5aa0 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .company-name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            text-align: center;
+            margin: 25px 0;
+            font-size: 24px;
+        }
+        
+        h2 {
+            color: #1a5490;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 20px;
+        }
+        
+        h3 {
+            color: #2c5aa0;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #1a5490;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+        
+        .box {
+            background: #f8f9fa;
+            border: 2px solid #1a5490;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .highlight strong {
+            color: #856404;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #1a5490;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        ul {
+            margin: 15px 0 15px 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .two-column-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .two-column-list li {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-left: 3px solid #1a5490;
+            border-radius: 5px;
+            margin-bottom: 0;
+            transition: all 0.3s;
+        }
+        
+        .two-column-list li:hover {
+            background: #e8f4ff;
+            transform: translateX(5px);
+        }
+        
+        @media (max-width: 600px) {
+            .two-column-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .package-option {
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .package-option:hover {
+            border-color: #1a5490;
+            background: #f8f9fa;
+        }
+        
+        .package-option input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .package-option.selected {
+            border-color: #1a5490;
+            background: #e8f4ff;
+        }
+        
+        .checkbox-group {
+            margin: 20px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 3px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            cursor: pointer;
+            font-weight: normal;
+            margin-bottom: 0;
+            flex: 1;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #1a5490 0%, #2c5aa0 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .compact {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .signature-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1a5490;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .definition-box {
+            background: #e8f4ff;
+            border-left: 4px solid #1a5490;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .definition-box strong {
+            color: #1a5490;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="company-name">NEXLI FUNDING LLC</div>
+            <div class="tagline">Lead Generation Services Agreement</div>
+        </div>
+        
+        <div class="content">
+            <h1>BUSINESS FINANCING LEAD GENERATION AGREEMENT</h1>
+            
+            <p style="text-align: center; font-size: 14px; color: #666; margin-bottom: 30px;">
+                Effective Date: <span id="effective-date"></span>
+            </p>
+            
+            <form id="agreementForm">
+                
+                <!-- SECTION 1: PARTIES -->
+                <h2>1. PARTIES</h2>
+                
+                <p><strong>Provider:</strong> NEXLI FUNDING LLC</p>
+                
+                <div class="box">
+                    <h3>Client Information</h3>
+                    <div class="form-group">
+                        <label for="company_name">Company Name *</label>
+                        <input type="text" id="company_name" name="company_name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">Contact First Name *</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Contact Last Name *</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company_address">Business Address *</label>
+                        <input type="text" id="company_address" name="company_address" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SECTION 2: KEY DEFINITIONS -->
+                <h2>2. KEY DEFINITIONS</h2>
+                
+                <div class="definition-box">
+                    <p><strong>Qualified Lead:</strong> A business whose authorized representative directly provided their information through our web forms, including complete contact details, expressed interest in financing, and submitted within delivery timeframe.</p>
+                </div>
+                
+                <div class="definition-box">
+                    <p><strong>Mixed Portfolio (Trial Month):</strong> A balanced mix of qualified leads including various revenue ranges ($10K-$120K+ monthly), different credit profiles (550-800+), multiple industries, and geographic diversity - delivered without customization during Month 1.</p>
+                </div>
+                
+                <!-- SECTION 3: SERVICES & DELIVERABLES -->
+                <h2>3. SERVICES & DELIVERABLES</h2>
+                
+                <div class="box">
+                    <h3>What We Provide:</h3>
+                    <ul>
+                        <li><strong>Exclusive Leads:</strong> Never resold to anyone else - permanent exclusivity</li>
+                        <li><strong>Lead Source:</strong> Business owners who filled out our web forms requesting financing</li>
+                        <li><strong>Information Included:</strong> Business name, contact info, revenue ($10K+ monthly), time in business</li>
+                        <li><strong>⚡ INSTANT Delivery:</strong> Via webhook in real-time 24/7</li>
+                        <li><strong>Distribution:</strong> Evenly throughout the month (approximately 1-2 leads/day for 50-pack, 3-5/day for 100-pack)</li>
+                        <li><strong>Compliance:</strong> All leads are TCPA compliant with documented consent</li>
+                    </ul>
+                </div>
+                
+                <h3>Financing Products Covered:</h3>
+                <ul class="two-column-list">
+                    <li>Merchant Cash Advances (MCA)</li>
+                    <li>Term Loans</li>
+                    <li>Lines of Credit</li>
+                    <li>Equipment Financing</li>
+                    <li>SBA Loans</li>
+                    <li>Invoice Factoring</li>
+                    <li>Working Capital Loans</li>
+                    <li>Revenue-Based Financing</li>
+                </ul>
+                
+                <h3>Lead Delivery Methods:</h3>
+                <div class="box">
+                    <ul>
+                        <li><strong>Primary:</strong> Email notification with lead details (instant)</li>
+                        <li><strong>Optional:</strong> API webhook integration (provide your endpoint below)</li>
+                        <li><strong>Optional:</strong> Shared Google Sheets (real-time updates)</li>
+                        <li><strong>Optional:</strong> CRM integration (additional setup may apply)</li>
+                    </ul>
+                    
+                    <div class="form-row" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="delivery_email">Primary Delivery Email *</label>
+                            <input type="email" id="delivery_email" name="delivery_email" placeholder="leads@yourcompany.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="webhook_url">Webhook URL (Optional)</label>
+                            <input type="text" id="webhook_url" name="webhook_url" placeholder="https://yourcrm.com/webhook">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SECTION 4: PRICING & PAYMENT -->
+                <h2>4. PRICING & PAYMENT</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Package</th>
+                            <th>Minimum Leads</th>
+                            <th>Price per Lead</th>
+                            <th>Monthly Total</th>
+                            <th>Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Trial (Month 1)</strong></td>
+                            <td>50</td>
+                            <td>$50</td>
+                            <td>$2,500</td>
+                            <td>Mixed portfolio, no customization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Standard (Month 2+)</strong></td>
+                            <td>100</td>
+                            <td>$50</td>
+                            <td>$5,000</td>
+                            <td>Mixed portfolio or custom (custom pricing varies)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight">
+                    <strong>⚠️ IMPORTANT PAYMENT TERMS:</strong>
+                    <ul>
+                        <li>Payment required IN FULL before receiving any leads</li>
+                        <li>NO REFUNDS - all sales are final</li>
+                        <li>If we deliver fewer leads than paid for: Credits roll over to next month (no cash refunds)</li>
+                        <li>Late payments: Service suspended immediately until payment received</li>
+                    </ul>
+                </div>
+                
+                <h3>Payment Method Selection:</h3>
+                <div class="package-option" onclick="selectPackage(this, 'bank')">
+                    <label>
+                        <input type="radio" name="payment_method" value="bank" checked>
+                        <strong>Bank Transfer / ACH</strong> - $2,500 (Best Value - No Processing Fees)
+                    </label>
+                </div>
+                <div class="package-option" onclick="selectPackage(this, 'card')">
+                    <label>
+                        <input type="radio" name="payment_method" value="card">
+                        <strong>Credit/Debit Card</strong> - $2,575 (Includes 3% Processing Fee)
+                    </label>
+                </div>
+                
+                <p style="margin-top: 20px;"><strong>Accepted Payment Methods:</strong> Wire Transfer, ACH Transfer, Certified Check, Zelle, or Credit/Debit Card (client pays processing fee)</p>
+                <p><strong>Billing Cycle:</strong> Monthly, paid in advance</p>
+                <p><strong>Due Date:</strong> Before the 1st of each month for that month's leads</p>
+                
+                <!-- SECTION 5: LEAD QUALITY & REPLACEMENTS -->
+                <h2>5. LEAD QUALITY & REPLACEMENTS</h2>
+                
+                <div class="box">
+                    <h3>We'll Replace Leads Only If:</h3>
+                    <ul>
+                        <li>Phone number is disconnected or wrong</li>
+                        <li>Email bounces immediately</li>
+                        <li>It's a duplicate from the last 90 days</li>
+                        <li>Critical information is missing</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>We DON'T Replace For:</h3>
+                    <ul>
+                        <li>Prospect won't return your calls</li>
+                        <li>Prospect changed their mind</li>
+                        <li>You couldn't convert them</li>
+                        <li>They went with another lender</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Replacement Process:</strong> Report issues within 72 hours with proof → We review within 3 days → If approved, replacement within 5 days</p>
+                
+                <!-- SECTION 6: EXCLUSIVITY GUARANTEE -->
+                <h2>6. EXCLUSIVITY GUARANTEE</h2>
+                
+                <div class="box" style="background: #e8f4ff; border-color: #1a5490;">
+                    <p style="margin: 0; font-size: 18px;"><strong>100% EXCLUSIVE:</strong> Every lead is yours alone. We NEVER resell leads to anyone else, ever. This exclusivity is permanent.</p>
+                </div>
+                
+                <!-- SECTION 7: CUSTOM LEADS -->
+                <h2>7. CUSTOM LEADS (Month 2+ Only)</h2>
+                
+                <p>After your trial month, you can request custom criteria:</p>
+                <ul>
+                    <li>Specific revenue ranges</li>
+                    <li>Credit score minimums (550+, 600+, 650+, 700+)</li>
+                    <li>Documentation levels (basic, with bank statements, full package)</li>
+                    <li>Industry preferences</li>
+                    <li>Time in business requirements</li>
+                </ul>
+                <p><em>Note: Custom leads priced separately ($50-$100+ per lead based on criteria)</em></p>
+                
+                <!-- SECTION 8: LEGAL PROTECTIONS & LIMITATIONS -->
+                <h2>8. LEGAL PROTECTIONS & LIMITATIONS</h2>
+                
+                <h3>Our Responsibilities & Protections:</h3>
+                <ul>
+                    <li>Deliver exclusive leads as promised - never resold</li>
+                    <li>Maintain TCPA compliance with proper consent language on all forms</li>
+                    <li>Provide consent documentation if requested (timestamps, IP addresses)</li>
+                    <li>Keep your data secure with encrypted storage</li>
+                    <li>Replace invalid leads per our replacement policy</li>
+                    <li>Indemnify you for our failure to include proper consent language</li>
+                </ul>
+                
+                <h3>Your Responsibilities:</h3>
+                <ul>
+                    <li>Pay before receiving leads</li>
+                    <li>Contact leads professionally and legally</li>
+                    <li>Maintain your own TCPA compliance and insurance when calling</li>
+                    <li>Not resell or share lead data</li>
+                    <li>Indemnify us for claims arising from your sales practices</li>
+                    <li>Report lead issues within 72 hours</li>
+                </ul>
+                
+                <div class="highlight">
+                    <strong>Important Limitations & Protections:</strong>
+                    <ul>
+                        <li>We don't guarantee conversion rates or sales success</li>
+                        <li>We don't verify the accuracy of information prospects provide</li>
+                        <li>Our maximum liability is limited to the current month's payment</li>
+                        <li>We don't carry TCPA insurance - you should have your own</li>
+                        <li>No liability for indirect, consequential, or lost profits</li>
+                        <li>Leads provided "AS-IS" based on prospect submissions</li>
+                    </ul>
+                </div>
+                
+                <!-- SECTION 9: CANCELLATION -->
+                <h2>9. CANCELLATION</h2>
+                
+                <p><strong>How to Cancel:</strong> Email us 5 business days before your next billing cycle. Your service ends at the end of the current paid month. No refunds for partial months.</p>
+                
+                <p><strong>Immediate Termination:</strong> Either party can terminate immediately for breach of contract, non-payment, or fraud.</p>
+                
+                <!-- SECTION 10: DISPUTE RESOLUTION -->
+                <h2>10. DISPUTE RESOLUTION</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dispute_county">Dispute Resolution County & State *</label>
+                        <input type="text" id="dispute_county" name="dispute_county" value="Broward County, Florida" required readonly style="background-color: #f8f9fa;">
+                    </div>
+                    <div class="form-group">
+                        <label for="governing_state">Governing Law State *</label>
+                        <input type="text" id="governing_state" name="governing_state" value="Florida" required readonly style="background-color: #f8f9fa;">
+                    </div>
+                </div>
+                
+                <p>Any disputes will be handled through: (1) Direct negotiation, then (2) Mediation if needed, then (3) Legal action in the specified county.</p>
+                
+                <!-- SECTION 11: GENERAL TERMS -->
+                <h2>11. GENERAL TERMS</h2>
+                
+                <ul class="compact">
+                    <li>This is the entire agreement between us</li>
+                    <li>Changes must be in writing and signed by both parties</li>
+                    <li>If one part is invalid, the rest remains in effect</li>
+                    <li>Neither party can assign this agreement without written consent</li>
+                    <li>Email notices are acceptable</li>
+                    <li>Electronic signatures are valid</li>
+                </ul>
+                
+                <!-- PRE-SIGNATURE CHECKLIST -->
+                <h2>✓ Pre-Signature Checklist</h2>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term1" required>
+                        <label for="term1">I understand payment is required upfront before any leads</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term2" required>
+                        <label for="term2">I accept there are NO REFUNDS - only credits for undelivered leads</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term3" required>
+                        <label for="term3">I understand leads are delivered instantly via webhook in real-time 24/7</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term4" required>
+                        <label for="term4">I accept the minimum order requirements (50 for Month 1, 100 ongoing)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term5" required>
+                        <label for="term5">I understand Nexli doesn't guarantee conversion rates</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term6" required>
+                        <label for="term6">I will maintain my own TCPA compliance and insurance</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="term7" required>
+                        <label for="term7">I acknowledge Nexli's liability is limited to the current month's payment</label>
+                    </div>
+                </div>
+                
+                <!-- SIGNATURES -->
+                <div class="signature-section">
+                    <h2 style="border: none; margin-top: 0;">SIGNATURES</h2>
+                    
+                    <p>By signing below, both parties acknowledge they have read, understood, and agree to all terms.</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3>CLIENT SIGNATURE</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="signature">Type Your Full Legal Name to Sign *</label>
+                                <input type="text" id="signature" name="signature" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Your Title/Position *</label>
+                                <input type="text" id="title" name="title" placeholder="CEO, Owner, President, etc." required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="signing_company">Company Name (Confirm) *</label>
+                                <input type="text" id="signing_company" name="signing_company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signed_date">Today's Date *</label>
+                                <input type="date" id="signed_date" name="signed_date" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Submitting your agreement...</p>
+                </div>
+                
+                <div class="success-message">
+                    ✅ Agreement submitted successfully! Check your email for payment instructions.
+                </div>
+                
+                <div class="error-message">
+                    ❌ There was an error submitting your agreement. Please try again or contact support.
+                </div>
+                
+                <button type="submit" id="submitBtn">SUBMIT AGREEMENT & PROCEED TO PAYMENT</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Set today's date
+        const today = new Date();
+        document.getElementById('signed_date').valueAsDate = today;
+        document.getElementById('effective-date').textContent = today.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        
+        // Package selection
+        function selectPackage(element, value) {
+            document.querySelectorAll('.package-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            element.querySelector('input[type="radio"]').checked = true;
+        }
+        
+        // Pre-select first package
+        document.querySelector('.package-option').classList.add('selected');
+        
+        // Form submission
+        document.getElementById('agreementForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.querySelector('.loading');
+            const successMsg = document.querySelector('.success-message');
+            const errorMsg = document.querySelector('.error-message');
+            
+            // Validate all checkboxes are checked
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            
+            if (!allChecked) {
+                alert('Please check all agreement terms before submitting.');
+                return;
+            }
+            
+            // Hide messages
+            successMsg.classList.remove('show');
+            errorMsg.classList.remove('show');
+            
+            // Show loading
+            submitBtn.disabled = true;
+            loading.classList.add('show');
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {
+                // Contact Information
+                first_name: formData.get('first_name'),
+                last_name: formData.get('last_name'),
+                company_name: formData.get('company_name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                company_address: formData.get('company_address'),
+                
+                // Delivery Information
+                delivery_email: formData.get('delivery_email'),
+                webhook_url: formData.get('webhook_url') || '',
+                
+                // Payment Information
+                payment_method: formData.get('payment_method'),
+                package_type: '50-lead-trial',
+                total_amount: formData.get('payment_method') === 'bank' ? 2500 : 2575,
+                
+                // Legal Information
+                dispute_county: formData.get('dispute_county'),
+                governing_state: formData.get('governing_state'),
+                
+                // Signature Information
+                signature: formData.get('signature'),
+                title: formData.get('title'),
+                signing_company: formData.get('signing_company'),
+                signed_date: formData.get('signed_date'),
+                
+                // System Information
+                timestamp: new Date().toISOString(),
+                service_status: 'pending',
+                agreement_signed: true,
+                agreement_version: '2025-01',
+                ip_address: 'captured-by-webhook',
+                
+                // GHL Custom Fields
+                agreement_signed_date: formData.get('signed_date'),
+                leads_delivered_total: 0,
+                leads_remaining: 0,
+                monthly_lead_quota: 50,
+                month_number: 1
+            };
+            
+            try {
+                // REPLACE THIS URL WITH YOUR GHL WEBHOOK URL
+                const WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL_HERE';
+                
+                if (WEBHOOK_URL === 'YOUR_GHL_WEBHOOK_URL_HERE') {
+                    throw new Error('Please update the webhook URL in the code');
+                }
+                
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                loading.classList.remove('show');
+                
+                if (response.ok) {
+                    successMsg.classList.add('show');
+                    // Clear form
+                    this.reset();
+                    // Scroll to success message
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Optional: Redirect after 5 seconds
+                    setTimeout(() => {
+                        // You can redirect to a thank you page or payment page
+                        // window.location.href = 'https://yoursite.com/thank-you';
+                    }, 5000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                loading.classList.remove('show');
+                errorMsg.classList.add('show');
+                errorMsg.textContent = error.message === 'Please update the webhook URL in the code' 
+                    ? '⚠️ Configuration Error: The webhook URL needs to be set up. Please contact support.'
+                    : '❌ There was an error submitting your agreement. Please try again or contact support.';
+                submitBtn.disabled = false;
+                console.error('Error:', error);
+            }
+        });
+        
+        // Auto-copy company name to signing confirmation
+        document.getElementById('company_name').addEventListener('input', function() {
+            document.getElementById('signing_company').value = this.value;
+        });
+    </script>
+</body>
+</html>
